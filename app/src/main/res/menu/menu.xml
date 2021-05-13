@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MenuTitle"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/actionHome"
+        android:icon="@drawable/icons_8_increase"/>
+    <item android:id="@+id/actionCoin"
+        android:icon="@drawable/icons_8_chart"/>
+    <item android:id="@+id/actionNews"
+        android:icon="@drawable/icons_8_news"/>
+    <item android:id="@+id/actionMenu"
+        android:icon="@drawable/icons_8_customer"/>
+</menu>
