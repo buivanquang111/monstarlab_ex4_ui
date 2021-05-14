@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:id="@+id/textViewSkipThree"
         android:layout_marginTop="20dp"
         android:layout_marginRight="39dp"
         android:fontFamily="@font/lato_regular"

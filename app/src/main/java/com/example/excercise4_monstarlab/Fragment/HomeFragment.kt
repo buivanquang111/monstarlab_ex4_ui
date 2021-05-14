@@ -20,7 +20,6 @@ import kotlin.math.sign
 class HomeFragment : Fragment() {
     private var list: MutableList<Home> = mutableListOf()
     private val adapter: IndexAdapter = IndexAdapter(list)
-    //val adapter: HomeAdapter = HomeAdapter(list)
     private var isLoading: Boolean = false
     private var page = 1
     private var limit = 10
@@ -63,19 +62,17 @@ class HomeFragment : Fragment() {
 
         linearLayoutManager = LinearLayoutManager(context)
         view.recyclerViewIndex.layoutManager = linearLayoutManager
-                /*LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)*/
 
         setData()
         view.recyclerViewIndex.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if (dy >0 ){
+                if (dy > 0 ){
                     val visibleItemCount: Int =linearLayoutManager.childCount
                     val pastVisibleItem: Int = linearLayoutManager.findFirstCompletelyVisibleItemPosition()
                     val total: Int = adapter.itemCount
                     if (!isLoading){
-                        if ((visibleItemCount+pastVisibleItem)>=total){
-                            y=dy
+                        if ((visibleItemCount+pastVisibleItem) >= total) {
                             view.btnLoad.visibility = View.VISIBLE
                             view.btnLoad.setOnClickListener {
                                 page++
@@ -89,9 +86,11 @@ class HomeFragment : Fragment() {
                             }
                         }
                     }
+                    y=dy
                 }
-                if (dy<y){
+                if (dy < y){
                     view.btnLoad.visibility = View.GONE
+                    adapter.notifyDataSetChanged()
                 }
             }
         })
@@ -123,12 +122,8 @@ class HomeFragment : Fragment() {
         list.add(Home("IBEX 35","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
         list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
         list.add(Home("FTSE 100","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        /*list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("FTSE 100","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("IBEX 35","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))*/
         list.add(Home("","","","",""))
+        adapter.notifyDataSetChanged()
         Handler().postDelayed({
             view?.recyclerViewIndex?.adapter = adapter
             isLoading=false

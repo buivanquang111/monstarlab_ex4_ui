@@ -31,6 +31,14 @@ class LoginFragment : Fragment() {
         view.btnLogin.setOnClickListener {
             val edEmail = view.editTextEmailLogin.text.toString()
             val edPassWord = view.editTextPasswordLogin.text.toString()
+            if (edEmail.equals("") || edPassWord.equals("")){
+                Toast.makeText(context,"bạn cần nhập đủ tài khoản và mật khẩu để đăng nhập!!!",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (email.equals("") || passWord.equals("")) {
+                Toast.makeText(context,"bạn chưa có tài khoản!!!",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             if (edEmail.equals(email) && edPassWord.equals(passWord)){
                 Toast.makeText(mLoginActivity,"Login thành công",Toast.LENGTH_SHORT).show()
                 val intent: Intent = Intent(mLoginActivity, HomeActivity::class.java)

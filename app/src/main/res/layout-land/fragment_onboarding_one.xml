@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
+        android:id="@+id/textViewSkipOne"
         android:layout_marginRight="40dp"
         app:layout_constraintBottom_toTopOf="@+id/g1"
         app:layout_constraintRight_toRightOf="parent"

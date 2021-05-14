@@ -308,5 +308,4 @@
                 android:layout_height="68dp"/>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.excercise4_monstarlab.LoginActivity
@@ -28,6 +29,10 @@ class SignUpFragment : Fragment() {
         view.btnSignUp.setOnClickListener {
             val email: String = view.editTextEmailSignUp.text.toString()
             val passWord: String = view.editTextPasswordSignUp.text.toString()
+            if (email.equals("") || passWord.equals("")){
+                Toast.makeText(context,"bạn cần nhập đủ tài khoản và mật khẩu !!!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             val editor: SharedPreferences.Editor = mLoginActivity.sharedPreferences.edit()
             editor.putString("Email",email)
             editor.putString("Password",passWord)

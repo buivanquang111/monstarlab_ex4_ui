@@ -15,15 +15,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        sharedPreferences = getSharedPreferences("SHARED_INSTALL", Context.MODE_PRIVATE)
-        if (sharedPreferences.getInt("install",0) == 1){
-            Toast.makeText(this,"install",Toast.LENGTH_SHORT).show()
-            val intent: Intent = Intent(this,LoginActivity::class.java)
-            startActivity(intent)
-        }
-        else {
-            loadFragment(OnboardingOneFragment())
-            Toast.makeText(this,"no no",Toast.LENGTH_SHORT).show()
+        if (null ==savedInstanceState) {
+           sharedPreferences = getSharedPreferences("SHARED_INSTALL", Context.MODE_PRIVATE)
+           if (sharedPreferences.getInt("install", 0) == 1) {
+               Toast.makeText(this, "install", Toast.LENGTH_SHORT).show()
+               val intent: Intent = Intent(this, LoginActivity::class.java)
+               startActivity(intent)
+           } else {
+               loadFragment(OnboardingOneFragment())
+               Toast.makeText(this, "no no", Toast.LENGTH_SHORT).show()
+           }
         }
     }
     fun loadFragment(fragment: Fragment) {

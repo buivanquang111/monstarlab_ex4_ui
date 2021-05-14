@@ -12,12 +12,12 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        sharedPreferences = getSharedPreferences("SHARED_PREF",Context.MODE_PRIVATE)
-
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.frameLayoutLogin, LoginFragment())
-        transaction.addToBackStack(null)
-        transaction.commit()
+        sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        if (null == savedInstanceState) {
+            val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+            transaction.add(R.id.frameLayoutLogin, LoginFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
     }
 }

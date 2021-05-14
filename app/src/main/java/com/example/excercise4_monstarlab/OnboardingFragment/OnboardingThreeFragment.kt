@@ -27,17 +27,15 @@ class OnboardingThreeFragment : Fragment() {
             fragmentManager?.popBackStack()
         }
         view.btnStartLogin.setOnClickListener {
+            val editor: SharedPreferences.Editor = mMainActivity.sharedPreferences.edit()
+            editor.putInt("install",1)
+            editor.apply()
             val intent: Intent = Intent(mMainActivity, LoginActivity::class.java)
             startActivity(intent)
         }
         view.textViewSkipThree.setOnClickListener {
-            val editor: SharedPreferences.Editor = mMainActivity.sharedPreferences.edit()
-            editor.putInt("install",1)
-            editor.apply()
-
             val intent: Intent = Intent(mMainActivity, LoginActivity::class.java)
             startActivity(intent)
-            Toast.makeText(context,""+mMainActivity.sharedPreferences.getInt("install",0), Toast.LENGTH_SHORT).show()
         }
         return view
     }
