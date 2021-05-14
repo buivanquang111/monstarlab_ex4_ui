@@ -17,27 +17,28 @@ class IndexFragment : Fragment() {
     val adapter: IndexAdapter = IndexAdapter(list)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_indext,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_indext, container, false)
 
 
         return view
     }
-    private fun setData(){
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("FTSE 100","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("IBEX 35","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DAX","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("FTSE 100","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("FTSE 100","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("FTSE 100","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("IBEX 35","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
-        list.add(Home("DOWN JONES","NYSE","10:44:45","20.047,50","+203 (+1,04%)"))
+
+    private fun setData() {
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("FTSE 100", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("IBEX 35", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DAX", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("FTSE 100", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("FTSE 100", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("FTSE 100", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("IBEX 35", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
+        list.add(Home("DOWN JONES", "NYSE", "10:44:45", "20.047,50", "+203 (+1,04%)"))
 
     }
 }

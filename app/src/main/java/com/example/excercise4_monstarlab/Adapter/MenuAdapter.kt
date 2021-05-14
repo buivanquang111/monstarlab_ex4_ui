@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.excercise4_monstarlab.Object.Menu
 import com.example.excercise4_monstarlab.R
 
-class MenuAdapter(private var list: MutableList<Menu>):
-        RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class MenuAdapter(private var list: MutableList<Menu>) :
+        RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             1 -> {
@@ -58,23 +58,25 @@ class MenuAdapter(private var list: MutableList<Menu>):
         return list[position].type
     }
 
-    inner class OneViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun bind(img: Int,title: String) {
+    inner class OneViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(img: Int, title: String) {
             var imgOne: ImageView = itemView.findViewById(R.id.imageViewItemOne)
             var titleOne: TextView = itemView.findViewById(R.id.textViewItemOne)
             imgOne.setImageResource(img)
             titleOne.text = title
         }
     }
-    inner class TwoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+    inner class TwoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(title: String) {
-            var titleTwo:TextView = itemView.findViewById(R.id.textViewItemTwo)
+            var titleTwo: TextView = itemView.findViewById(R.id.textViewItemTwo)
             titleTwo.text = title
         }
     }
-    inner class ThreeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun bind(img: Int,title: String) {
-            var imgThree: ImageView =  itemView.findViewById(R.id.imageViewItemThree);
+
+    inner class ThreeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(img: Int, title: String) {
+            var imgThree: ImageView = itemView.findViewById(R.id.imageViewItemThree);
             var titleThree: TextView = itemView.findViewById(R.id.textViewItemThree)
             imgThree.setImageResource(img)
             titleThree.text = title

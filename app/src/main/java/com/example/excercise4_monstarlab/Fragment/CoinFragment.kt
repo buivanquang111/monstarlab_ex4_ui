@@ -13,13 +13,13 @@ import kotlinx.android.synthetic.main.fragment_coin.view.*
 class CoinFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_coin,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_coin, container, false)
         view.buttonAlarmCoin.setOnClickListener {
-            var  builder: AlertDialog.Builder = AlertDialog.Builder(context)
+            var builder: AlertDialog.Builder = AlertDialog.Builder(context)
             builder.setTitle("Thông báo")
             builder.setMessage("bạn vừa click thay đổi background!!!")
-            builder.setPositiveButton("Ok", DialogInterface.OnClickListener {
-                dialog, which ->  dialog.cancel()
+            builder.setPositiveButton("Ok", DialogInterface.OnClickListener { dialog, which ->
+                dialog.cancel()
 
             })
             var alertDialog: AlertDialog = builder.create()

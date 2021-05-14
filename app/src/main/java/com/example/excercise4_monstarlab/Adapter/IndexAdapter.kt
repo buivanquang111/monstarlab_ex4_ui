@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.excercise4_monstarlab.Object.Home
 import com.example.excercise4_monstarlab.R
 
-class IndexAdapter(private var list: MutableList<Home>): RecyclerView.Adapter<IndexAdapter.ViewHolder>() {
+class IndexAdapter(private var list: MutableList<Home>) : RecyclerView.Adapter<IndexAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IndexAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_home,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_home, parent, false)
         return ViewHolder(view)
     }
 
@@ -23,8 +23,8 @@ class IndexAdapter(private var list: MutableList<Home>): RecyclerView.Adapter<In
 
     override fun onBindViewHolder(holder: IndexAdapter.ViewHolder, position: Int) {
         var home: Home = list[position]
-       if (home.number.equals("") && home.name.equals("") && home.address.equals("") && home.time.equals("") && home.numberPlus.equals("")){
-            holder.txtNumber.visibility =View.GONE
+        if (home.number.equals("") && home.name.equals("") && home.address.equals("") && home.time.equals("") && home.numberPlus.equals("")) {
+            holder.txtNumber.visibility = View.GONE
             holder.imageLine.visibility = View.GONE
 
         }
@@ -35,7 +35,8 @@ class IndexAdapter(private var list: MutableList<Home>): RecyclerView.Adapter<In
         holder.txtNumberPlus.text = home.numberPlus
 
     }
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imageLine: ImageView
         var txtName: TextView
         var txtAddress: TextView

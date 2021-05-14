@@ -1,311 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#ffffff">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g1"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.03"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g2"
-        app:layout_constraintGuide_percent="0.36"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g3"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
     <ImageView
         android:id="@+id/imageViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="5dp"
         android:src="@drawable/icons_8_expand_arrow"
-        app:layout_constraintTop_toBottomOf="@id/g1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/g1" />
+
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:fontFamily="@font/raleway_black"
-        android:textSize="25sp"
-        android:textColor="#1d1d1d"
         android:text="NEO INDEX"
-        app:layout_constraintTop_toBottomOf="@id/g1"
+        android:textColor="#1d1d1d"
+        android:textSize="25sp"
         app:layout_constraintLeft_toRightOf="@+id/imageViewBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/g1" />
+
     <TextView
         android:id="@+id/textViewUSD"
-        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:fontFamily="@font/raleway_medium"
-        android:textSize="13sp"
-        android:textColor="#000000"
-        android:text="USD"
-        app:layout_constraintLeft_toRightOf="@+id/imageViewBack"
-        app:layout_constraintTop_toBottomOf="@id/imageViewBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
         android:layout_marginTop="4dp"
-        android:layout_marginLeft="18dp"
         android:fontFamily="@font/raleway_medium"
-        android:textSize="14sp"
+        android:text="USD"
         android:textColor="#000000"
-        android:text="Binance"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewBack"
-        app:layout_constraintLeft_toRightOf="@+id/textViewUSD"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/imageViewBack"
+        app:layout_constraintTop_toBottomOf="@id/imageViewBack" />
+
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Binance"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/textViewUSD"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBack" />
+
     <ImageView
         android:id="@+id/imageMenuVetical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:src="@drawable/icons_8_menu_vertical"
-        app:layout_constraintTop_toBottomOf="@id/g1"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/g1" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonAlarmCoin"
-        android:backgroundTint="#0f0f0f"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/icons_8_alarm"
-        app:layout_constraintTop_toBottomOf="@id/g1"
-        app:layout_constraintRight_toLeftOf="@+id/imageMenuVetical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#0f0f0f"
+        android:src="@drawable/icons_8_alarm"
+        app:layout_constraintRight_toLeftOf="@+id/imageMenuVetical"
+        app:layout_constraintTop_toBottomOf="@id/g1" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewCoin"
-        android:layout_marginTop="28dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginRight="26dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUSD"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        app:cardCornerRadius="20dp">
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="26dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUSD">
+
         <RelativeLayout
-            android:background="@drawable/background_coin"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/background_coin">
+
             <ImageView
                 android:id="@+id/imageViewArrowUp"
-                android:layout_marginLeft="18dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/icons_8_long_arrow_up"
                 android:layout_width="20dp"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:src="@drawable/icons_8_long_arrow_up" />
+
             <TextView
-                android:layout_toRightOf="@+id/imageViewArrowUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="20dp"
-                android:textSize="10sp"
-                android:textColor="#bcbcbc"
+                android:layout_toRightOf="@+id/imageViewArrowUp"
                 android:fontFamily="@font/lato_light"
                 android:text="RATE"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="#bcbcbc"
+                android:textSize="10sp" />
+
             <TextView
                 android:id="@+id/textViewNumberCoin"
-                android:layout_marginLeft="8dp"
-                android:paddingBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
                 android:layout_toRightOf="@+id/imageViewArrowUp"
                 android:fontFamily="@font/raleway_black"
-                android:textSize="23sp"
-                android:textColor="#ffffff"
+                android:paddingBottom="10dp"
                 android:text="21,1637"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="#ffffff"
+                android:textSize="23sp" />
+
             <TextView
-                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
                 android:layout_toRightOf="@+id/textViewNumberCoin"
                 android:fontFamily="@font/raleway_black"
-                android:textSize="12sp"
-                android:textColor="#ffffff"
                 android:text="USD"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageViewArrowUp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="3dp"
                 android:layout_toRightOf="@+id/imageViewArrowUp"
-                android:layout_below="@+id/imageViewArrowUp"
-                android:textSize="10sp"
-                android:textColor="#ffffff"
                 android:text="17:00:33 Real time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/lato_light"
-                android:textSize="10sp"
-                android:textColor="#bcbcbc"
-                android:layout_alignParentRight="true"
-                android:text="TODAY CHANGE"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginRight="23dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:fontFamily="@font/raleway_black"
-                android:textStyle="bold"
-                android:textSize="14sp"
                 android:textColor="#ffffff"
-                android:text="+2,0634 (+9,44%)"
+                android:textSize="10sp" />
+
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/lato_light"
+                android:text="TODAY CHANGE"
+                android:textColor="#bcbcbc"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="23dp"
+                android:fontFamily="@font/raleway_black"
+                android:text="+2,0634 (+9,44%)"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
     <ImageView
         android:id="@+id/imageViewNext"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
         android:layout_marginLeft="37dp"
         android:layout_marginTop="23dp"
         android:src="@drawable/image"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewCoin"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="15dp"
-        android:layout_height="15dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCoin" />
+
     <ImageView
-        android:src="@drawable/image_right"
-        android:layout_marginRight="37dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
         android:layout_marginTop="23dp"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewCoin"
+        android:layout_marginRight="37dp"
+        android:src="@drawable/image_right"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="15dp"
-        android:layout_height="15dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCoin" />
+
     <TextView
-        android:gravity="center"
-        android:background="@drawable/backgrpunf_neo_coin"
-        android:textSize="14sp"
-        android:textColor="#222222"
-        android:text="NEO Chart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewCoin"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/backgrpunf_neo_coin"
+        android:gravity="center"
+        android:text="NEO Chart"
+        android:textColor="#222222"
+        android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCoin" />
+
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:src="@drawable/componente_7_4"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewNext"
         app:layout_constraintBottom_toTopOf="@+id/g3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:adjustViewBounds="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageViewNext" />
+
     <ImageView
-        android:layout_marginRight="27dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:adjustViewBounds="true"
         android:src="@drawable/neo_chart"
-        app:layout_constraintTop_toBottomOf="@+id/g2"
         app:layout_constraintBottom_toTopOf="@+id/g3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:adjustViewBounds="true"
-        android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/g2" />
+
     <LinearLayout
-        android:background="@drawable/background_linearlayout_coin"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/g3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_linearlayout_coin"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/g3">
+
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
             <TextView
-                android:gravity="center"
-                android:textSize="12sp"
-                android:textColor="#222222"
-                android:text="General"
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
+                android:text="General"
+                android:textColor="#222222"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/border_index"
-                android:textSize="12sp"
-                android:textColor="#ffffff"
+                android:gravity="center"
                 android:text="Technical Section"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
             <TextView
-                android:gravity="end"
-                android:textSize="12sp"
-                android:textColor="#222222"
-                android:text="General"
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="General"
+                android:textColor="#222222"
+                android:textSize="12sp" />
+
             <TextView
-                android:gravity="end"
-                android:textSize="12sp"
-                android:textColor="#222222"
-                android:text="General"
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="General"
+                android:textColor="#222222"
+                android:textSize="12sp" />
         </LinearLayout>
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
+
             <TextView
-                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:fontFamily="@font/raleway_medium"
-                android:textSize="10sp"
-                android:textColor="#222222"
+                android:gravity="center"
                 android:text="Buy or Sell for NEO"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:gravity="center"
-                android:fontFamily="@font/raleway_medium"
-                android:textSize="10sp"
                 android:textColor="#222222"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/raleway_medium"
+                android:gravity="center"
                 android:text="Mkt Capitalization"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:textColor="#222222"
+                android:textSize="10sp" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <ImageView
-                android:layout_weight="1"
-                android:src="@drawable/raggruppa_38"
                 android:layout_width="0dp"
-                android:layout_height="83dp"/>
+                android:layout_height="83dp"
+                android:layout_weight="1"
+                android:src="@drawable/raggruppa_38" />
+
             <ImageView
+                android:layout_width="0dp"
+                android:layout_height="68dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:src="@drawable/raggruppa_60"
-                android:layout_width="0dp"
-                android:layout_height="68dp"/>
+                android:src="@drawable/raggruppa_60" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

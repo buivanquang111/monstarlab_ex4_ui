@@ -16,15 +16,15 @@ import com.example.excercise4_monstarlab.R
 import kotlinx.android.synthetic.main.fragment_onboarding_one.view.*
 import kotlinx.android.synthetic.main.fragment_onboarding_two.view.*
 
-class OnboardingTwoFragment : Fragment(){
+class OnboardingTwoFragment : Fragment() {
     lateinit var mMainActivity: MainActivity
     val TAG: String = "TAG2"
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_onboarding_two,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_onboarding_two, container, false)
         mMainActivity = activity as MainActivity
         view.imageViewBack.setOnClickListener {
             fragmentManager?.popBackStack()

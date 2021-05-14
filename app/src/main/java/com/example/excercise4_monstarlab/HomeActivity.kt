@@ -19,36 +19,36 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        loadFragment(HomeFragment(),null)
+        loadFragment(HomeFragment(), null)
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.actionHome ->{
+            when (it.itemId) {
+                R.id.actionHome -> {
                     bottomNavigationView.itemIconTintList =
                             ContextCompat.getColorStateList(this, R.color.item_bottom_navigation_color)
                     bottomNavigationView.itemBackground =
                             ContextCompat.getDrawable(this, R.drawable.item_bottom_nav_background)
-                    loadFragment(HomeFragment(),null)
+                    loadFragment(HomeFragment(), null)
                 }
-                R.id.actionCoin ->{
+                R.id.actionCoin -> {
                     bottomNavigationView.itemIconTintList =
                             ContextCompat.getColorStateList(this, R.color.item_bottom_navigation_color)
                     bottomNavigationView.itemBackground =
                             ContextCompat.getDrawable(this, R.drawable.item_bottom_nav_background)
-                    loadFragment(CoinFragment(),"coinFragment")
+                    loadFragment(CoinFragment(), "coinFragment")
                 }
-                R.id.actionNews ->{
+                R.id.actionNews -> {
                     bottomNavigationView.itemIconTintList =
                             ContextCompat.getColorStateList(this, R.color.item_bottom_navigation_color)
                     bottomNavigationView.itemBackground =
                             ContextCompat.getDrawable(this, R.drawable.item_bottom_nav_background)
-                    loadFragment(NewsFragment(),"newsFragment")
+                    loadFragment(NewsFragment(), "newsFragment")
                 }
-                R.id.actionMenu ->{
+                R.id.actionMenu -> {
                     bottomNavigationView.itemIconTintList =
                             ContextCompat.getColorStateList(this, R.color.item_bottom_navigation_color)
                     bottomNavigationView.itemBackground =
                             ContextCompat.getDrawable(this, R.drawable.item_bottom_nav_background)
-                    loadFragment(MenuFragment(),"menuFragment")
+                    loadFragment(MenuFragment(), "menuFragment")
                 }
             }
             true
@@ -56,9 +56,9 @@ class HomeActivity : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.actionHome
     }
 
-    private fun loadFragment(fragment: Fragment,tag: String?){
+    private fun loadFragment(fragment: Fragment, tag: String?) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frameLayoutHome,fragment)
+        transaction.replace(R.id.frameLayoutHome, fragment)
         transaction.addToBackStack(tag)
         transaction.commit()
     }
@@ -66,12 +66,12 @@ class HomeActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         var position = supportFragmentManager.backStackEntryCount
-        if (position == 1){
-            var  builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        if (position == 1) {
+            var builder: AlertDialog.Builder = AlertDialog.Builder(this)
             builder.setTitle("Thông báo")
             builder.setMessage("Ứng dụng đã bị thoát!!!")
-            builder.setPositiveButton("Ok", DialogInterface.OnClickListener {
-                dialog, which ->  moveTaskToBack(true)
+            builder.setPositiveButton("Ok", DialogInterface.OnClickListener { dialog, which ->
+                moveTaskToBack(true)
 
             })
             var alertDialog: AlertDialog = builder.create()

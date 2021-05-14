@@ -18,11 +18,11 @@ import kotlinx.android.synthetic.main.fragment_onboarding_one.view.*
 class OnboardingOneFragment : Fragment() {
     lateinit var mMainActivity: MainActivity
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_onboarding_one,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_onboarding_one, container, false)
         mMainActivity = activity as MainActivity
         view.btnGoToFragmentTwo.setOnClickListener {
             var transaction: FragmentTransaction? = fragmentManager?.beginTransaction()
@@ -31,7 +31,7 @@ class OnboardingOneFragment : Fragment() {
             transaction?.commit()
         }
         view.textViewSkipOne.setOnClickListener {
-            val intent: Intent = Intent(mMainActivity,LoginActivity::class.java)
+            val intent: Intent = Intent(mMainActivity, LoginActivity::class.java)
             startActivity(intent)
         }
 

@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_confirm_password_changed.view.*
 class ConfirmPasswordChangedFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_confirm_password_changed,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_confirm_password_changed, container, false)
         view.btnConfirmPasswordChanged.setOnClickListener {
             var transaction: FragmentTransaction? = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.frameLayoutLogin, LoginFragment())

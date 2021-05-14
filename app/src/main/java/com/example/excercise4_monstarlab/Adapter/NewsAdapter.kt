@@ -10,10 +10,10 @@ import com.example.excercise4_monstarlab.Object.News
 import com.example.excercise4_monstarlab.R
 import kotlinx.android.synthetic.main.item_recyclerview_news.view.*
 
-class NewsAdapter( private var listNews: MutableList<News>, private val listener: OnItemClickLister): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(private var listNews: MutableList<News>, private val listener: OnItemClickLister) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_news,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_news, parent, false)
         return ViewHolder(view)
     }
 
@@ -29,12 +29,14 @@ class NewsAdapter( private var listNews: MutableList<News>, private val listener
         holder.txtDetail.text = news.detail
         holder.img.setImageResource(news.image)
     }
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),View.OnClickListener{
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         var img: ImageView
         var txtMinus: TextView
         var txtDate: TextView
         var txtName: TextView
         var txtDetail: TextView
+
         init {
             img = itemView.findViewById(R.id.imageViewItemNews)
             txtMinus = itemView.findViewById(R.id.textViewMinusItemNews)
@@ -46,11 +48,12 @@ class NewsAdapter( private var listNews: MutableList<News>, private val listener
 
         override fun onClick(v: View?) {
             val position: Int = layoutPosition
-            if (position != RecyclerView.NO_POSITION){
+            if (position != RecyclerView.NO_POSITION) {
                 listener.onItemClick(position)
             }
         }
     }
+
     interface OnItemClickLister {
         fun onItemClick(position: Int)
     }

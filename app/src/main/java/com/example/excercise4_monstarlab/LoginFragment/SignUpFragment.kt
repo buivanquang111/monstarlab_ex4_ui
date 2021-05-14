@@ -16,7 +16,7 @@ class SignUpFragment : Fragment() {
     lateinit var mLoginActivity: LoginActivity
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_sign_up,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_sign_up, container, false)
 
         mLoginActivity = activity as LoginActivity
 
@@ -29,13 +29,13 @@ class SignUpFragment : Fragment() {
         view.btnSignUp.setOnClickListener {
             val email: String = view.editTextEmailSignUp.text.toString()
             val passWord: String = view.editTextPasswordSignUp.text.toString()
-            if (email.equals("") || passWord.equals("")){
-                Toast.makeText(context,"bạn cần nhập đủ tài khoản và mật khẩu !!!", Toast.LENGTH_SHORT).show()
+            if (email.equals("") || passWord.equals("")) {
+                Toast.makeText(context, "bạn cần nhập đủ tài khoản và mật khẩu !!!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val editor: SharedPreferences.Editor = mLoginActivity.sharedPreferences.edit()
-            editor.putString("Email",email)
-            editor.putString("Password",passWord)
+            editor.putString("Email", email)
+            editor.putString("Password", passWord)
             editor.apply()
 
             var transaction: FragmentTransaction? = fragmentManager?.beginTransaction()

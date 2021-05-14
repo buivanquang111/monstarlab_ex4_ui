@@ -19,7 +19,7 @@ class OnboardingThreeFragment : Fragment() {
     val TAG: String = "TAG3"
     lateinit var mMainActivity: MainActivity
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_onboarding_three,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_onboarding_three, container, false)
 
         mMainActivity = activity as MainActivity
 
@@ -28,7 +28,7 @@ class OnboardingThreeFragment : Fragment() {
         }
         view.btnStartLogin.setOnClickListener {
             val editor: SharedPreferences.Editor = mMainActivity.sharedPreferences.edit()
-            editor.putInt("install",1)
+            editor.putInt("install", 1)
             editor.apply()
             val intent: Intent = Intent(mMainActivity, LoginActivity::class.java)
             startActivity(intent)

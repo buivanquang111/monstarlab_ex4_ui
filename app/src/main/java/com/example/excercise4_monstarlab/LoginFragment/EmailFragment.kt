@@ -20,29 +20,32 @@ class EmailFragment : Fragment() {
     var mHandler: Handler = Handler()
     var number: Int = 30
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_email,container,false)
+        val view: View = inflater.inflate(R.layout.fragment_email, container, false)
 
         backZero = Runnable {
             if (number > 0) {
                 number--
                 view.textViewNumber.text = number.toString()
-                mHandler.postDelayed(backZero,500)
-            }else if (number == 0){
-                Toast.makeText(mLoginActivity,"change password thanh cong",Toast.LENGTH_SHORT).show()
+                mHandler.postDelayed(backZero, 500)
+            } else if (number == 0) {
+                val editor: SharedPreferences.Editor = mLoginActivity.sharedPreferences.edit()
+                editor.putString("Password", pass)
+                editor.apply()
+                Toast.makeText(mLoginActivity, "change password thanh cong", Toast.LENGTH_SHORT).show()
                 var transaction: FragmentTransaction? = fragmentManager?.beginTransaction()
                 transaction?.replace(R.id.frameLayoutLogin, ConfirmPasswordChangedFragment())
                 transaction?.addToBackStack(null)
                 transaction?.commit()
             }
         }
-        mHandler.postDelayed(backZero,1000)
+        mHandler.postDelayed(backZero, 1000)
 
         mLoginActivity = activity as LoginActivity
         view.btnResendEmail.setOnClickListener {
             val editor: SharedPreferences.Editor = mLoginActivity.sharedPreferences.edit()
-            editor.putString("Password",pass)
+            editor.putString("Password", pass)
             editor.apply()
-            Toast.makeText(mLoginActivity,"${mLoginActivity.sharedPreferences.getString("Email","")} , ${mLoginActivity.sharedPreferences.getString("Password","")}",Toast.LENGTH_SHORT).show()
+            Toast.makeText(mLoginActivity, "${mLoginActivity.sharedPreferences.getString("Email", "")} , ${mLoginActivity.sharedPreferences.getString("Password", "")}", Toast.LENGTH_SHORT).show()
             var transaction: FragmentTransaction? = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.frameLayoutLogin, ConfirmPasswordChangedFragment())
             transaction?.addToBackStack(null)

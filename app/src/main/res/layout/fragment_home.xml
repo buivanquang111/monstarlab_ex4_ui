@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#ffffff">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g1"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g2"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g3"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -31,113 +35,124 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-        android:src="@drawable/logo"
-        app:layout_constraintTop_toBottomOf="@+id/g1"
-        app:layout_constraintLeft_toLeftOf="@+id/g2"
-        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo"
+        app:layout_constraintLeft_toLeftOf="@+id/g2"
+        app:layout_constraintTop_toBottomOf="@+id/g1" />
+
     <ImageView
         android:id="@+id/imageViewSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/icons_8_search"
         app:layout_constraintRight_toRightOf="@+id/g3"
-        app:layout_constraintTop_toBottomOf="@id/g1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/g1" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:background="@drawable/item_tab_home"
-        android:layout_marginTop="37dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSearch"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:weightSum="9"
         android:layout_width="match_parent"
-        android:layout_height="72dp">
-        <LinearLayout
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-            <TextView
-                android:background="@drawable/border_index"
-                android:fontFamily="@font/lato_light"
-                android:gravity="center"
-                android:textSize="12sp"
-                android:textColor="#ffffff"
-                android:text="Index"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <TextView
-            android:fontFamily="@font/lato_light"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textColor="#222222"
-            android:text="SHARES"
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:fontFamily="@font/lato_light"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textColor="#222222"
-            android:text="CURRENCIES"
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:fontFamily="@font/lato_light"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textColor="#222222"
-            android:text="FUTURES"
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:fontFamily="@font/lato_light"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:text="CRYPTO"
-            android:maxLines="1"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_height="72dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/item_tab_home"
+        android:weightSum="9"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSearch">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_index"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:text="Index"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:text="SHARES"
+            android:textColor="#222222"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:text="CURRENCIES"
+            android:textColor="#222222"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:text="FUTURES"
+            android:textColor="#222222"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="CRYPTO"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewIndex"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-    <Button
-        android:id="@+id/btnLoad"
-        android:visibility="gone"
-        android:layout_marginBottom="20dp"
-        android:textSize="15sp"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="#ffffff"
-        android:background="@drawable/background_button_load"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="Load More"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/btnLoad"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_button_load"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Load More"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonAlarmHome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginRight="35dp"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/icons_8_alarm"
         android:backgroundTint="#101010"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        android:src="@drawable/icons_8_alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
