@@ -31,8 +31,6 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_home,container,false)
-
-
         var itemTouchHelper: ItemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.DOWN or  ItemTouchHelper.UP,
                 ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT
@@ -41,28 +39,23 @@ class HomeFragment : Fragment() {
                 adapter.notifyItemMoved(viewHolder.layoutPosition, target.layoutPosition)
                 return true
             }
-
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 var position = viewHolder.layoutPosition
                 when (direction) {
                     ItemTouchHelper.LEFT -> {
                         list.removeAt(position)
                         adapter.notifyItemRemoved(viewHolder.layoutPosition)
-
                     }
                     ItemTouchHelper.RIGHT -> {
                         list.removeAt(position)
                         adapter.notifyItemRemoved(viewHolder.layoutPosition)
-
                     }
                 }
             }
         })
         itemTouchHelper.attachToRecyclerView(view.recyclerViewIndex)
-
         linearLayoutManager = LinearLayoutManager(context)
         view.recyclerViewIndex.layoutManager = linearLayoutManager
-
         setData()
         view.recyclerViewIndex.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -94,7 +87,6 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-
         view.buttonAlarmHome.setOnClickListener {
             var  builder: AlertDialog.Builder = AlertDialog.Builder(context)
             builder.setTitle("Thông báo")
@@ -108,7 +100,6 @@ class HomeFragment : Fragment() {
         }
         return view
     }
-
     private fun setData(){
         isLoading=true
         view?.btnLoad?.visibility = View.GONE
@@ -129,7 +120,4 @@ class HomeFragment : Fragment() {
             isLoading=false
         },1000)
     }
-
-
-
 }
